@@ -1,0 +1,67 @@
+apply plugin: 'com.android.application'
+
+android {
+    sourceSets {
+        main {
+            res.srcDirs =
+                    [
+                            'src/main/res/layout/mainpage',
+                            'src/main/res/layout/type_page',
+                            'src/main/res/layout/community_page',
+                            'src/main/res/layout/cart_page',
+                            'src/main/res/layout/user_page',
+                            'src/main/res/layout',
+                            'src/main/res'
+                    ]
+        }
+    }
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.example.shopmall"
+        minSdkVersion 25
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
+
+        compileOptions {
+
+            sourceCompatibility JavaVersion.VERSION_1_8
+
+            targetCompatibility JavaVersion.VERSION_1_8
+
+        }
+
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    api 'com.youth.banner:banner:1.1.5'  //指定版本
+
+    api 'com.github.bumptech.glide:glide:3.7.0'   //Glide库
+
+    api 'com.squareup.retrofit2:retrofit:2.0.2'
+    // Retrofit库
+    api 'com.squareup.okhttp3:okhttp:3.1.2'
+    // Okhttp库
+
+    api 'com.jakewharton:butterknife:7.0.1'
+    api 'com.zhy:okhttputils:2.6.2'
+    api 'com.alibaba:fastjson:1.1.56.android'
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.13.1'
+    implementation 'com.alibaba:fastjson:1.2.56'
+}
